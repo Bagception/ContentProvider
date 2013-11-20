@@ -3,8 +3,12 @@ package com.example.bagception_database;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 /**
  * An activity representing a single Item detail screen. This activity is only
@@ -43,6 +47,7 @@ public class ItemDetailActivity extends FragmentActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.item_detail_container, fragment).commit();
 		}
+		
 	}
 
 	@Override

@@ -28,17 +28,18 @@ public final class R {
         public static final int rounded_corners_white=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000d;
+        public static final int action_settings=0x7f09000e;
         public static final int buttonItem=0x7f090002;
         public static final int cancelButton=0x7f090007;
-        public static final int cardDescription=0x7f09000a;
-        public static final int cardName=0x7f090008;
-        public static final int cardStatus=0x7f090009;
-        public static final int cardVisibility=0x7f09000b;
+        public static final int cardDescription=0x7f09000b;
+        public static final int cardName=0x7f090009;
+        public static final int cardStatus=0x7f09000a;
+        public static final int cardVisibility=0x7f09000c;
         public static final int item_detail_container=0x7f090000;
         public static final int item_list=0x7f090001;
-        public static final int newItem=0x7f09000c;
+        public static final int newItem=0x7f09000d;
         public static final int personDetailScrollView=0x7f090003;
+        public static final int saveButton=0x7f090008;
         public static final int textDescription=0x7f090005;
         public static final int textName=0x7f090004;
         public static final int textVisibility=0x7f090006;

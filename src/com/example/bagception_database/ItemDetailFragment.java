@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.bagceptiondatabase.database.DatabaseHandler;
@@ -33,7 +36,7 @@ public class ItemDetailFragment extends Fragment {
 	private TextView textName;
 	private TextView textDescritption;
 	private TextView textVisibility;
-
+	
 	/**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
 	 * fragment (e.g. upon screen orientation changes).
@@ -52,11 +55,14 @@ public class ItemDetailFragment extends Fragment {
 		}
 	}
 
+	Button saveButton;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_item_detail,
 				container, false);
+		
 
 		if (mItem != null) {
 			
@@ -69,7 +75,17 @@ public class ItemDetailFragment extends Fragment {
 			textVisibility = ((TextView) rootView.findViewById(R.id.textVisibility));
 			textVisibility.setText(mItem.visibility);
 		}
+		
+		
+		saveButton = (Button) rootView.findViewById(R.id.saveButton);
+		saveButton.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
 
+				updateItemFromUI();
+			}
+		});
+		
 		return rootView;
 	}
 	
@@ -79,7 +95,7 @@ public class ItemDetailFragment extends Fragment {
 		super.onPause();
 		
 		// Statt onPause() soll Inhalt bei ButtonClick "Speichern" gespeichert werden
-		updateItemFromUI();		
+		//updateItemFromUI();		
 	}
 	
 	
