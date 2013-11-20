@@ -8,10 +8,18 @@
 package com.example.bagception_database;
 
 public final class R {
+    public static final class array {
+        public static final int ids=0x7f070000;
+        public static final int visibility=0x7f070001;
+    }
     public static final class attr {
     }
     public static final class color {
+        public static final int background=0x7f040001;
+        public static final int dark_text=0x7f040003;
         public static final int light_blue=0x7f040000;
+        public static final int listitem=0x7f040004;
+        public static final int text=0x7f040002;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -28,21 +36,34 @@ public final class R {
         public static final int rounded_corners_white=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000e;
-        public static final int buttonItem=0x7f090002;
-        public static final int cancelButton=0x7f090007;
-        public static final int cardDescription=0x7f09000b;
-        public static final int cardName=0x7f090009;
-        public static final int cardStatus=0x7f09000a;
-        public static final int cardVisibility=0x7f09000c;
-        public static final int item_detail_container=0x7f090000;
-        public static final int item_list=0x7f090001;
-        public static final int newItem=0x7f09000d;
-        public static final int personDetailScrollView=0x7f090003;
-        public static final int saveButton=0x7f090008;
-        public static final int textDescription=0x7f090005;
-        public static final int textName=0x7f090004;
-        public static final int textVisibility=0x7f090006;
+        public static final int action_settings=0x7f0a001b;
+        public static final int addTag=0x7f0a0011;
+        public static final int badge_small=0x7f0a000f;
+        public static final int buttonItem=0x7f0a0002;
+        public static final int cancelButton=0x7f0a0014;
+        public static final int cardDescription=0x7f0a0018;
+        public static final int cardName=0x7f0a0016;
+        public static final int cardStatus=0x7f0a0017;
+        public static final int cardVisibility=0x7f0a0019;
+        public static final int foundTags=0x7f0a0012;
+        public static final int itemDescription=0x7f0a0008;
+        public static final int itemName=0x7f0a0005;
+        public static final int itemPhoto=0x7f0a000e;
+        public static final int itemVisibility=0x7f0a000b;
+        public static final int item_detail_container=0x7f0a0000;
+        public static final int item_list=0x7f0a0001;
+        public static final int newItem=0x7f0a001a;
+        public static final int saveButton=0x7f0a0015;
+        public static final int tableRow=0x7f0a0003;
+        public static final int tableRow2=0x7f0a0004;
+        public static final int tableRow3=0x7f0a0007;
+        public static final int tableRow4=0x7f0a000a;
+        public static final int tableRow5=0x7f0a000d;
+        public static final int tableRow6=0x7f0a0010;
+        public static final int tableRow7=0x7f0a0013;
+        public static final int textDescription=0x7f0a0009;
+        public static final int textName=0x7f0a0006;
+        public static final int textVisibility=0x7f0a000c;
     }
     public static final class layout {
         public static final int activity_item_detail=0x7f030000;
@@ -69,15 +90,24 @@ public final class R {
         public static final int item_listitem=0x7f030006;
     }
     public static final class menu {
-        public static final int list_activity=0x7f080000;
-        public static final int main=0x7f080001;
+        public static final int list_activity=0x7f090000;
+        public static final int main=0x7f090001;
     }
     public static final class string {
         public static final int action_settings=0x7f060003;
         public static final int app_name=0x7f060000;
+        public static final int cancel=0x7f06000d;
+        public static final int des=0x7f060008;
+        public static final int foto=0x7f06000a;
         public static final int hello_world=0x7f060004;
+        public static final int item=0x7f060006;
+        public static final int menu_items=0x7f060005;
+        public static final int name=0x7f060007;
+        public static final int save=0x7f06000c;
+        public static final int tag=0x7f06000b;
         public static final int title_activity_main=0x7f060002;
         public static final int title_item_detail=0x7f060001;
+        public static final int vis=0x7f060009;
     }
     public static final class style {
         /** 
@@ -101,10 +131,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
 }

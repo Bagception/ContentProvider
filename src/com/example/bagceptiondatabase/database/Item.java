@@ -35,7 +35,7 @@ public class Item {
 			+ COL_TAGID + " TEXT NOT NULL DEFAULT '',"
 			+ COL_NAME + " TEXT NOT NULL DEFAULT '',"
 			+ COL_DES + " TEXT NULL DEFAULT '',"
-			+ COL_VIS + " TEXT NOT NULL DEFAULT ''"
+			+ COL_VIS + " TEXT NULL DEFAULT ''"
 			+ ")";
 	
 	// Fields corresponding to database columns

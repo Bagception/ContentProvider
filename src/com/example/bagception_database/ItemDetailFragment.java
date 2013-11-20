@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.webkit.WebView.FindListener;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.bagceptiondatabase.database.DatabaseHandler;
@@ -39,6 +40,8 @@ public class ItemDetailFragment extends Fragment {
 	 */
 	private TextView textName;
 	private TextView textDescritption;
+	private Spinner spinner;
+	private CharSequence stringVisibility;
 	private TextView textVisibility;
 	
 	/**
@@ -78,6 +81,7 @@ public class ItemDetailFragment extends Fragment {
 			
 			textVisibility = ((TextView) rootView.findViewById(R.id.textVisibility));
 			textVisibility.setText(mItem.visibility);
+			
 		}
 		
 		
@@ -117,6 +121,7 @@ public class ItemDetailFragment extends Fragment {
 			AlertDialog ad = new AlertDialog.Builder(getActivity()).create();
 			ad.setTitle("Gespeichert");
 			ad.setMessage("Gegenstand wurde gespeichert");
+			
 			ad.setButton("OK", new DialogInterface.OnClickListener() {
 				
 				@Override

@@ -6,5 +6,25 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="menu_items">Alle Gegenstände</string>
+	<string name="item">Gegenstand</string>
+	<string name="name">Name</string>
+	<string name="des">Beschreibung</string>
+	<string name="vis">Sichtbarkeit</string>
+	<string name="foto">Bild</string>
+	<string name="tag">Tag ID</string>
+	<string name="save">Speichern</string>
+	<string name="cancel">Abbrechen</string>
+	    
+    
+    <string-array name="ids">
+        <item>Found ID 1</item>
+        <item>Found ID 2</item>
+        <item>Found ID XY</item>
+    </string-array>
+    <string-array name="visibility">
+        <item>Öffentlich</item>
+        <item>Privat</item>
+    </string-array>
 
 </resources>
