@@ -1,5 +1,8 @@
 package com.example.bagception_database;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -29,6 +32,7 @@ public class ItemDetailFragment extends Fragment {
 	 * The dummy content this fragment is presenting.
 	 */
 	private Item mItem;
+	private LayoutInflater mInflater;
 	
 	/**
 	 * The UI elements showing the details of the Item
@@ -109,6 +113,22 @@ public class ItemDetailFragment extends Fragment {
 			mItem.visibility = textVisibility.getText().toString();
 
 			DatabaseHandler.getInstance(getActivity()).putItem(mItem);
+			
+			AlertDialog ad = new AlertDialog.Builder(getActivity()).create();
+			ad.setTitle("Gespeichert");
+			ad.setMessage("Gegenstand wurde gespeichert");
+			ad.setButton("OK", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					
+					Intent i = new Intent(getActivity(), ItemListActivity.class);
+					startActivity(i);
+				}
+			});
+			
+			ad.setIcon(R.drawable.ic_launcher);
+			ad.show();
 		}
 	}
 }
