@@ -7,16 +7,41 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_items">Alle Gegenstände</string>
-	<string name="item">Gegenstand</string>
-	<string name="name">Name</string>
-	<string name="des">Beschreibung</string>
-	<string name="vis">Sichtbarkeit</string>
-	<string name="foto">Bild</string>
-	<string name="tag">Tag ID</string>
-	<string name="save">Speichern</string>
-	<string name="cancel">Abbrechen</string>
-	    
-    
+    <string name="item">Gegenstand</string>
+    <string name="name">Name</string>
+    <string name="des">Beschreibung</string>
+    <string name="vis">Sichtbarkeit</string>
+    <string name="foto">Bild</string>
+    <string name="tag">Tag ID</string>
+    <string name="save">Speichern</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="headText">Menü</string>
+    <string name="place">Ort hinzufügen</string>
+    <string name="activity">Aktivität hinzufügen</string>
+    <string name="context">Kontext hinzufügen</string>
+    <string name="title_activity_add_place">AddPlace</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="title_activity_add_context">AddContext</string>
+    <string name="hello_item">Item</string>
+    <string name="hello_place">Place</string>
+    <string name="hello_activity">Activity</string>
+    <string name="hello_context">Context</string>
+    <string name="itemName">Name</string>
+    <string name="description">Beschreibung</string>
+    <string name="itemVisibility">Sichtbarkeit</string>
+    <string name="itemPhoto">Bild</string>
+    <string name="itemPlace">Adresse</string>
+    <string name="rb1">Privat</string>
+    <string name="rb2">Öffentlich</string>
+    <string name="addTag">Tag hinzufügen</string>
+    <string name="chooseItem">Gegenstände</string>
+    <string name="chooseButton">Auswahl</string>
+    <string name="football">FUßBALL</string>
+    <string name="forgot">Vergessen:</string>
+    <string name="additionalFunctions">Weitere Funktionen:</string>
+    <string name="changeItem">Gegenstand bearbeiten</string>
+    <string name="showItems">Gegenstände</string>
+
     <string-array name="ids">
         <item>Found ID 1</item>
         <item>Found ID 2</item>
@@ -26,5 +51,8 @@
         <item>Öffentlich</item>
         <item>Privat</item>
     </string-array>
+
+    <string name="title_activity_test__gui_1">Test_GUI_1</string>
+    <string name="title_activity_test__gui_2">Test_GUI_2</string>
 
 </resources>

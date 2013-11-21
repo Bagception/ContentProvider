@@ -1,5 +1,7 @@
 package com.example.bagception_database;
 
+import com.example.bagception_database.gui.Test_GUI_1;
+import com.example.bagception_database.gui.Test_GUI_2;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -29,4 +31,13 @@ public class MainActivity extends Activity {
     	startActivity(item_intent);
     }
 
+	public void goToTestGUI_1(View view){
+    	Intent place_intent = new Intent(this, Test_GUI_1.class);
+    	startActivity(place_intent);
+    }
+    
+    public void goToTestGUI_2(View view){
+    	Intent activity_intent = new Intent(this, Test_GUI_2.class);
+    	startActivity(activity_intent);
+    }
 }

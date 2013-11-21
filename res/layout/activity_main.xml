@@ -17,5 +17,25 @@
         android:onClick="goToItem"
         android:text="@string/menu_items"
         />
+    
+    <Button
+        android:id="@+id/buttonGegenstand"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/buttonItem"
+        android:onClick="goToTestGUI_1"
+        android:text="Test_GUI_1"
+         />
+
+    <Button
+        android:id="@+id/buttonOrt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonGegenstand"
+        android:layout_below="@+id/buttonGegenstand"
+        android:onClick="goToTestGUI_2"
+        android:text="Test_GUI_2"
+         />
 
 </RelativeLayout>
