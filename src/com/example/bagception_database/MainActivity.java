@@ -2,6 +2,8 @@ package com.example.bagception_database;
 
 import com.example.bagception_database.gui.Test_GUI_1;
 import com.example.bagception_database.gui.Test_GUI_2;
+
+import de.uniulm.bagception.bluetoothClient.UI.AddNewBagActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -39,5 +41,13 @@ public class MainActivity extends Activity {
     public void goToTestGUI_2(View view){
     	Intent activity_intent = new Intent(this, Test_GUI_2.class);
     	startActivity(activity_intent);
+    }
+    
+    /**
+     * @author Bianca Strobel
+     */
+    public void searchForNewBag(View view){
+    	Intent search_intent = new Intent(this, AddNewBagActivity.class);
+    	startActivity(search_intent);
     }
 }

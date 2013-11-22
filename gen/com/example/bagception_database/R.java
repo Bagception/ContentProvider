@@ -36,45 +36,53 @@ public final class R {
         public static final int rounded_corners_white=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0023;
-        public static final int addTag=0x7f0a001a;
-        public static final int badge_small=0x7f0a000e;
-        public static final int buttonGegenstand=0x7f0a0003;
-        public static final int buttonItem=0x7f0a0002;
-        public static final int buttonOrt=0x7f0a0004;
-        public static final int cancel=0x7f0a0010;
-        public static final int cancelButton=0x7f0a001c;
-        public static final int cardDescription=0x7f0a0020;
-        public static final int cardName=0x7f0a001e;
-        public static final int cardStatus=0x7f0a001f;
-        public static final int cardVisibility=0x7f0a0021;
-        public static final int check=0x7f0a0013;
-        public static final int editName=0x7f0a0008;
-        public static final int foundTags=0x7f0a001b;
-        public static final int itemDescription=0x7f0a0016;
-        public static final int itemName=0x7f0a0007;
-        public static final int itemPhoto=0x7f0a000d;
-        public static final int itemVisibility=0x7f0a000a;
-        public static final int item_detail_container=0x7f0a0000;
-        public static final int item_list=0x7f0a0001;
-        public static final int label=0x7f0a0012;
-        public static final int newItem=0x7f0a0022;
-        public static final int save=0x7f0a0011;
-        public static final int saveButton=0x7f0a001d;
-        public static final int tableRow=0x7f0a0005;
-        public static final int tableRow2=0x7f0a0006;
-        public static final int tableRow3=0x7f0a0015;
-        public static final int tableRow4=0x7f0a0009;
-        public static final int tableRow5=0x7f0a000c;
-        public static final int tableRow6=0x7f0a0019;
-        public static final int tableRow7=0x7f0a000f;
-        public static final int textDescription=0x7f0a0017;
-        public static final int textName=0x7f0a0014;
-        public static final int textVisibility=0x7f0a0018;
-        public static final int visibility=0x7f0a000b;
+        public static final int action_settings=0x7f0a0028;
+        public static final int addTag=0x7f0a0020;
+        public static final int badge_small=0x7f0a0014;
+        public static final int buttonGegenstand=0x7f0a0008;
+        public static final int buttonItem=0x7f0a0007;
+        public static final int buttonNewBag=0x7f0a000a;
+        public static final int buttonOrt=0x7f0a0009;
+        public static final int cancel=0x7f0a0016;
+        public static final int cancelButton=0x7f0a0022;
+        public static final int cardDescription=0x7f0a0026;
+        public static final int cardName=0x7f0a0024;
+        public static final int cardStatus=0x7f0a0025;
+        public static final int cardVisibility=0x7f0a0027;
+        public static final int check=0x7f0a0019;
+        public static final int editName=0x7f0a000e;
+        public static final int foundDevices=0x7f0a0004;
+        public static final int foundTags=0x7f0a0021;
+        public static final int itemDescription=0x7f0a001c;
+        public static final int itemName=0x7f0a000d;
+        public static final int itemPhoto=0x7f0a0013;
+        public static final int itemVisibility=0x7f0a0010;
+        public static final int item_detail_container=0x7f0a0005;
+        public static final int item_list=0x7f0a0006;
+        public static final int label=0x7f0a0018;
+        public static final int newItem=0x7f0a0029;
+        public static final int noPairedDevices=0x7f0a0001;
+        public static final int pairedDevices=0x7f0a0002;
+        public static final int save=0x7f0a0017;
+        public static final int saveButton=0x7f0a0023;
+        public static final int scandevice=0x7f0a0003;
+        public static final int scrollView=0x7f0a0000;
+        public static final int tableRow=0x7f0a000b;
+        public static final int tableRow2=0x7f0a000c;
+        public static final int tableRow3=0x7f0a001b;
+        public static final int tableRow4=0x7f0a000f;
+        public static final int tableRow5=0x7f0a0012;
+        public static final int tableRow6=0x7f0a001f;
+        public static final int tableRow7=0x7f0a0015;
+        public static final int textDescription=0x7f0a001d;
+        public static final int textName=0x7f0a001a;
+        public static final int textVisibility=0x7f0a001e;
+        public static final int visibility=0x7f0a0011;
     }
     public static final class layout {
-        public static final int activity_item_detail=0x7f030000;
+        public static final int activity_add_new_bag=0x7f030000;
+        public static final int activity_current_connection=0x7f030001;
+        public static final int activity_item_detail=0x7f030002;
         /** 
     Layout alias to replace the single-pane version of the layout with a
     two-pane version on Large screens.
@@ -90,20 +98,21 @@ public final class R {
     http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
     
          */
-        public static final int activity_item_list=0x7f030001;
-        public static final int activity_item_twopane=0x7f030002;
-        public static final int activity_main=0x7f030003;
-        public static final int activity_test__gui_1=0x7f030004;
-        public static final int activity_test__gui_2=0x7f030005;
-        public static final int fragment_item_detail=0x7f030006;
-        public static final int fragment_item_list=0x7f030007;
-        public static final int item_listitem=0x7f030008;
+        public static final int activity_item_list=0x7f030003;
+        public static final int activity_item_twopane=0x7f030004;
+        public static final int activity_main=0x7f030005;
+        public static final int activity_test__gui_1=0x7f030006;
+        public static final int activity_test__gui_2=0x7f030007;
+        public static final int fragment_item_detail=0x7f030008;
+        public static final int fragment_item_list=0x7f030009;
+        public static final int item_listitem=0x7f03000a;
     }
     public static final class menu {
-        public static final int list_activity=0x7f090000;
-        public static final int main=0x7f090001;
-        public static final int test__gui_1=0x7f090002;
-        public static final int test__gui_2=0x7f090003;
+        public static final int add_new_bag=0x7f090000;
+        public static final int list_activity=0x7f090001;
+        public static final int main=0x7f090002;
+        public static final int test__gui_1=0x7f090003;
+        public static final int test__gui_2=0x7f090004;
     }
     public static final class string {
         public static final int action_settings=0x7f060003;
@@ -142,6 +151,7 @@ public final class R {
         public static final int tag=0x7f06000b;
         public static final int title_activity_add=0x7f060013;
         public static final int title_activity_add_context=0x7f060014;
+        public static final int title_activity_add_new_bag=0x7f06002a;
         public static final int title_activity_add_place=0x7f060012;
         public static final int title_activity_main=0x7f060002;
         public static final int title_activity_test__gui_1=0x7f060028;

@@ -54,5 +54,6 @@
 
     <string name="title_activity_test__gui_1">Test_GUI_1</string>
     <string name="title_activity_test__gui_2">Test_GUI_2</string>
+    <string name="title_activity_add_new_bag">AddNewBagActivity</string>
 
 </resources>
