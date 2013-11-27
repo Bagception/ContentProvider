@@ -23,16 +23,16 @@ public class Item {
 	public static final String COL_NAME = "name";
 	public static final String COL_DES = "desription";
 	public static final String COL_VIS = "visibility";
-	public static final String COL_TAGID = "tag_id";
+	public static final String COL_CONTEXT = "context";
 	
 	// Database projection, so order is consistent
-	public static final String[] FIELDS = {COL_ID, COL_TAGID,COL_NAME, COL_DES, COL_VIS};
+	public static final String[] FIELDS = {COL_ID, COL_CONTEXT,COL_NAME, COL_DES, COL_VIS};
 	
 	// SQL code that creates a Table for storing Items in
 	public static final String CREATE_TABLE = 
 			"CREATE TABLE " + TABLE_NAME + "(" 
 			+ COL_ID + " INTEGER PRIMARY KEY,"
-			+ COL_TAGID + " TEXT NOT NULL DEFAULT '',"
+			+ COL_CONTEXT + " TEXT NOT NULL DEFAULT '',"
 			+ COL_NAME + " TEXT NOT NULL DEFAULT '',"
 			+ COL_DES + " TEXT NULL DEFAULT '',"
 			+ COL_VIS + " TEXT NULL DEFAULT ''"
@@ -62,7 +62,7 @@ public class Item {
 	// Return the fields in a ContentValues object, suitable for insertion into the database
 	public ContentValues getContent() {
 		final ContentValues values = new ContentValues();
-		values.put(COL_TAGID, tagid);
+		values.put(COL_CONTEXT, tagid);
 		values.put(COL_NAME, name);
 		values.put(COL_DES, description);
 		values.put(COL_VIS, visibility);

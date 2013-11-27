@@ -14,10 +14,14 @@ public class BagceptionProvider extends ContentProvider {
 	// URIs
 	// Used for all items
 	public static final String ITEMS = SCHEME + AUTHORITY + "/item";  
+	public static final String CONTEXT = SCHEME + AUTHORITY + "/context";
+	
 	public static final Uri URI_ITEMS = Uri.parse(ITEMS);
+	public static final Uri URI_CONTEXT = Uri.parse(CONTEXT);
 	
 	// Used for a single item, just add the id to the end
 	public static final String ITEM_BASE = ITEMS + "/";
+	public static final String CONTEXT_BASE = CONTEXT + "/";
 	
 	public BagceptionProvider() {
 	}
@@ -68,6 +72,23 @@ public class BagceptionProvider extends ContentProvider {
 			final long id = Long.parseLong(uri.getLastPathSegment());
 			result = DatabaseHandler.getInstance(getContext()).getReadableDatabase().query(Item.TABLE_NAME, Item.FIELDS, null, null, null, null, null);
 			result.setNotificationUri(getContext().getContentResolver(), URI_ITEMS);
+		} 
+		// Getting all contexts
+		else if(URI_CONTEXT.equals(uri)) {
+				
+				result = DatabaseHandler
+						.getInstance(getContext())
+						.getReadableDatabase()
+						.query(ActivityContext.TABLE_NAME, ActivityContext.FIELDS, null, null, null, null, null);
+				result.setNotificationUri(getContext().getContentResolver(), URI_CONTEXT);
+			
+		}
+		// Getting a single context
+		else if (uri.toString().startsWith(CONTEXT_BASE)) {
+			
+			final long id = Long.parseLong(uri.getLastPathSegment());
+			result = DatabaseHandler.getInstance(getContext()).getReadableDatabase().query(ActivityContext.TABLE_NAME, ActivityContext.FIELDS, null, null, null, null, null);
+			result.setNotificationUri(getContext().getContentResolver(), URI_CONTEXT);
 		} else {		
 			throw new UnsupportedOperationException("Not yet implemented");
 		}

@@ -18,31 +18,12 @@
         android:text="@string/menu_items" />
     
     <Button 
-        android:id="@+id/editItemButton"
+        android:id="@+id/buttonContext"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:onClick="createNewItem"
-        android:text="@string/newItem"
-        android:layout_below="@+id/buttonItem"/>
-
-    <Button
-        android:id="@+id/buttonGegenstand"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editItemButton"
-        android:layout_centerHorizontal="true"
-        android:onClick="goToTestGUI_1"
-        android:text="Test_GUI_1" />
-
-    <Button
-        android:id="@+id/buttonOrt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonGegenstand"
-        android:layout_below="@+id/buttonGegenstand"
-        android:onClick="goToTestGUI_2"
-        android:text="Test_GUI_2" />
+        android:onClick="goToContext"
+        android:text="@string/menu_context" />
 
     <Button
         android:id="@+id/buttonNewBag"

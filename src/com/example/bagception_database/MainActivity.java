@@ -33,9 +33,9 @@ public class MainActivity extends Activity {
     	startActivity(item_intent);
     }
 	
-	public void createNewItem(View view) {
-		Intent item_intent = new Intent(this, ItemDetailActivity.class);
-		startActivity(item_intent);
+	public void goToContext(View view) {
+		Intent context_intent = new Intent(this, ContextListActivity.class);
+		startActivity(context_intent);
 	}
 
 	public void goToTestGUI_1(View view){
