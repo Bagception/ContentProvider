@@ -41,6 +41,7 @@
     <string name="additionalFunctions">Weitere Funktionen:</string>
     <string name="changeItem">Gegenstand bearbeiten</string>
     <string name="showItems">Gegenstände</string>
+    <string name="newItem">Gegenstand hinzufügen</string>
 
     <string-array name="ids">
         <item>Found ID 1</item>

@@ -32,6 +32,8 @@
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
+		android:layout_marginLeft="4dp"
+		android:layout_marginRight="4dp"
         android:background="@color/light_blue"
         android:visibility="visible" />
 
@@ -44,16 +46,6 @@
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:textColor="@color/text"
-        android:textSize="16sp" />
-    
-    <TextView
-        android:id="@+id/cardVisibility"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:textColor="@color/text"
-        android:textSize="23sp" />
-    
+        android:textSize="18sp" />
 
 </LinearLayout>

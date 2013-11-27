@@ -32,6 +32,11 @@ public class MainActivity extends Activity {
     	Intent item_intent = new Intent(this, ItemListActivity.class);
     	startActivity(item_intent);
     }
+	
+	public void createNewItem(View view) {
+		Intent item_intent = new Intent(this, ItemDetailActivity.class);
+		startActivity(item_intent);
+	}
 
 	public void goToTestGUI_1(View view){
     	Intent place_intent = new Intent(this, Test_GUI_1.class);
