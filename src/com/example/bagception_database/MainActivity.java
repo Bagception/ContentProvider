@@ -33,11 +33,6 @@ public class MainActivity extends Activity {
     	startActivity(item_intent);
     }
 	
-	public void goToContext(View view) {
-		Intent context_intent = new Intent(this, ContextListActivity.class);
-		startActivity(context_intent);
-	}
-
 	public void goToTestGUI_1(View view){
     	Intent place_intent = new Intent(this, Test_GUI_1.class);
     	startActivity(place_intent);

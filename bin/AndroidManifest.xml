@@ -61,18 +61,7 @@
             android:name="de.uniulm.bagception.bluetoothClient.UI.AddNewBagActivity"
             android:label="@string/title_activity_add_new_bag" >
         </activity>
-        <activity
-            android:name="com.example.bagception_database.ContextListActivity"
-            android:label="@string/title_context_list" >
-        </activity>
-        <activity
-            android:name="com.example.bagception_database.ContextDetailActivity"
-            android:label="@string/title_context_detail"
-            android:parentActivityName=".ContextListActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ContextListActivity" />
-        </activity>
+        
     </application>
 
 </manifest>

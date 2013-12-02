@@ -107,8 +107,8 @@ public class ItemListActivity extends FragmentActivity implements
 		return result;
 	}
 	
-	public void goToMenu(View view){
+	/**public void goToMenu(View view){
     	Intent menu_intent = new Intent(this, ItemListActivity.class);
     	startActivity(menu_intent);
-    }
+    }**/
 }
