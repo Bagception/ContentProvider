@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 /**
  * An activity representing a list of Items. This activity has different
@@ -105,4 +106,9 @@ public class ItemListActivity extends FragmentActivity implements
 		
 		return result;
 	}
+	
+	/**public void goToMenu(View view){
+    	Intent menu_intent = new Intent(this, ItemListActivity.class);
+    	startActivity(menu_intent);
+    }**/
 }

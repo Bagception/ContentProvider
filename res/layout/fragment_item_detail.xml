@@ -196,6 +196,7 @@
 		android:layout_gravity="center"
 		android:textColor="@color/dark_text"
 		android:layout_marginLeft="25dp"
+		android:onClick="goToMenu"
 	    android:text="@string/cancel" />
 	
 		<Button

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -27,37 +28,37 @@
         android:text="@string/menu_items" />
 
     <Button
-        android:id="@+id/buttonGegenstand"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonItem"
-        android:layout_centerHorizontal="true"
-        android:onClick="goToTestGUI_1"
-        android:text="Test_GUI_1" />
-
-    <Button
-        android:id="@+id/buttonOrt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonGegenstand"
-        android:layout_below="@+id/buttonGegenstand"
-        android:onClick="goToTestGUI_2"
-        android:text="Test_GUI_2" />
-
-    <Button
         android:id="@+id/buttonNewBag"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonGegenstand"
-        android:layout_below="@+id/buttonOrt"
+        android:layout_alignLeft="@+id/buttonItem"
+        android:layout_below="@+id/buttonItem"
         android:onClick="searchForNewBag"
         android:text="Search for new bag" />
+
+    <Button
+        android:id="@+id/buttonTest1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonItem"
+        android:layout_below="@+id/buttonNewBag"
+        android:onClick="goToTestGUI_1"
+        android:text="Test GUI 1" />
+
+    <Button
+        android:id="@+id/buttonTest2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonItem"
+        android:layout_below="@+id/buttonTest1"
+        android:onClick="goToTestGUI_2"
+        android:text="Test GUI 2" />
 
     <Button
         android:id="@+id/buttonSettings"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonNewBag"
+        android:layout_below="@+id/buttonTest2"
         android:onClick="showSettings"
         android:text="Settings" />
 

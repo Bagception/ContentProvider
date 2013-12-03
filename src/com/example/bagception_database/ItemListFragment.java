@@ -79,7 +79,7 @@ public class ItemListFragment extends ListFragment {
 
 		setListAdapter(new SimpleCursorAdapter(getActivity(), R.layout.item_listitem, null, 
 				new String[] {Item.COL_NAME, Item.COL_DES, Item.COL_VIS}, 
-				new int[] {R.id.cardName, R.id.cardDescription, R.id.cardVisibility}, 0));
+				new int[] {R.id.cardName, R.id.cardDescription}, 0));
 		
 		// Load the content
 		getLoaderManager().initLoader(0, null, new LoaderCallbacks<Cursor>() {

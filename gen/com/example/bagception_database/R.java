@@ -36,21 +36,20 @@ public final class R {
         public static final int rounded_corners_white=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0027;
+        public static final int action_settings=0x7f0a0026;
         public static final int addTag=0x7f0a001f;
         public static final int badge_small=0x7f0a0013;
-        public static final int buttonGegenstand=0x7f0a0005;
         public static final int buttonItem=0x7f0a0004;
-        public static final int buttonNewBag=0x7f0a0007;
-        public static final int buttonOrt=0x7f0a0006;
+        public static final int buttonNewBag=0x7f0a0005;
         public static final int buttonSettings=0x7f0a0008;
         public static final int buttonShowFoundItems=0x7f0a0003;
+        public static final int buttonTest1=0x7f0a0006;
+        public static final int buttonTest2=0x7f0a0007;
         public static final int cancel=0x7f0a0015;
         public static final int cancelButton=0x7f0a0021;
         public static final int cardDescription=0x7f0a0025;
         public static final int cardName=0x7f0a0023;
         public static final int cardStatus=0x7f0a0024;
-        public static final int cardVisibility=0x7f0a0026;
         public static final int check=0x7f0a0018;
         public static final int editName=0x7f0a000d;
         public static final int foundDevices=0x7f0a0009;
@@ -62,7 +61,7 @@ public final class R {
         public static final int item_detail_container=0x7f0a0001;
         public static final int item_list=0x7f0a0002;
         public static final int label=0x7f0a0017;
-        public static final int newItem=0x7f0a0028;
+        public static final int newItem=0x7f0a0027;
         public static final int noPairedDevices=0x7f0a0000;
         public static final int save=0x7f0a0016;
         public static final int saveButton=0x7f0a0022;
@@ -87,6 +86,7 @@ public final class R {
 
     For more on layout aliases, see:
     http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
+
     
 
     Layout alias to replace the single-pane version of the layout with a
@@ -94,6 +94,7 @@ public final class R {
 
     For more on layout aliases, see:
     http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
+
     
          */
         public static final int activity_item_list=0x7f030002;
