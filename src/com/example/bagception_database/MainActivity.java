@@ -1,9 +1,9 @@
 package com.example.bagception_database;
 
+import com.example.bagception_database.gui.ShowFoundTags;
 import com.example.bagception_database.gui.Test_GUI_1;
 import com.example.bagception_database.gui.Test_GUI_2;
 
-import de.uniulm.bagception.bluetoothClient.UI.AddNewBagActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,27 +27,39 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
-	public void goToItem(View view){
-    	Intent item_intent = new Intent(this, ItemListActivity.class);
-    	startActivity(item_intent);
-    }
 
-	public void goToTestGUI_1(View view){
-    	Intent place_intent = new Intent(this, Test_GUI_1.class);
-    	startActivity(place_intent);
-    }
-    
-    public void goToTestGUI_2(View view){
-    	Intent activity_intent = new Intent(this, Test_GUI_2.class);
-    	startActivity(activity_intent);
-    }
-    
-    /**
-     * @author Bianca Strobel
-     */
-    public void searchForNewBag(View view){
-    	Intent search_intent = new Intent(this, AddNewBagActivity.class);
-    	startActivity(search_intent);
-    }
+	public void goToItem(View view) {
+		Intent item_intent = new Intent(this, ItemListActivity.class);
+		startActivity(item_intent);
+	}
+
+	public void goToTestGUI_1(View view) {
+		Intent place_intent = new Intent(this, Test_GUI_1.class);
+		startActivity(place_intent);
+	}
+
+	public void goToTestGUI_2(View view) {
+		Intent activity_intent = new Intent(this, Test_GUI_2.class);
+		startActivity(activity_intent);
+	}
+
+	/**
+	 * @author Bianca Strobel
+	 */
+	public void searchForNewBag(View view) {
+		Intent search_intent = new Intent(
+				"de.uniulm.bagception.bluetoothClient.UI.AddNewBagStartActivity");
+		startActivity(search_intent);
+	}
+
+	public void showFoundItems(View view) {
+		Intent showFoundItems = new Intent(this, ShowFoundTags.class);
+		startActivity(showFoundItems);
+	}
+
+	public void showSettings(View view) {
+		Intent showSettings = new Intent(
+				"de.uniulm.bagception.clientSettings.UI.SettingsActivity");
+		startActivity(showSettings);
+	}
 }

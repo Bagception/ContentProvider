@@ -10,9 +10,18 @@
     tools:context=".MainActivity" >
 
     <Button
+        android:id="@+id/buttonShowFoundItems"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:onClick="showFoundItems"
+        android:text="@string/showFoundItems" />
+
+    <Button
         android:id="@+id/buttonItem"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonShowFoundItems"
         android:layout_centerHorizontal="true"
         android:onClick="goToItem"
         android:text="@string/menu_items" />
@@ -43,5 +52,13 @@
         android:layout_below="@+id/buttonOrt"
         android:onClick="searchForNewBag"
         android:text="Search for new bag" />
+
+    <Button
+        android:id="@+id/buttonSettings"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonNewBag"
+        android:onClick="showSettings"
+        android:text="Settings" />
 
 </RelativeLayout>

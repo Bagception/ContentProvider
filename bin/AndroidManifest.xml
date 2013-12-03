@@ -21,7 +21,6 @@
             android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -60,6 +59,10 @@
         <activity
             android:name="de.uniulm.bagception.bluetoothClient.UI.AddNewBagActivity"
             android:label="@string/title_activity_add_new_bag" >
+        </activity>
+        <activity
+            android:name="com.example.bagception_database.gui.ShowFoundTags"
+            android:label="@string/title_activity_show_found_tags" >
         </activity>
     </application>
 

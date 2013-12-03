@@ -41,6 +41,8 @@
     <string name="additionalFunctions">Weitere Funktionen:</string>
     <string name="changeItem">Gegenstand bearbeiten</string>
     <string name="showItems">Gegenstände</string>
+    <string name="showFoundItems">Show Found Items</string>
+    <string name="FoundItemsTitle">Gefundene Items</string>
 
     <string-array name="ids">
         <item>Found ID 1</item>
@@ -55,5 +57,6 @@
     <string name="title_activity_test__gui_1">Test_GUI_1</string>
     <string name="title_activity_test__gui_2">Test_GUI_2</string>
     <string name="title_activity_add_new_bag">AddNewBagActivity</string>
+    <string name="title_activity_show_found_tags">ShowFoundTags</string>
 
 </resources>
