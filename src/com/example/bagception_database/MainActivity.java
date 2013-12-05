@@ -5,6 +5,7 @@ import org.json.JSONException;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ import de.uniulm.bagception.bundlemessageprotocol.BundleMessage.BUNDLE_MESSAGE;
 import de.uniulm.bagception.bundlemessageprotocol.entities.Item;
 import de.uniulm.bagception.protocol.bundle.constants.Command;
 import de.uniulm.bagception.protocol.bundle.constants.StatusCode;
+import de.uniulm.bagception.services.ServiceNames;
 
 public class MainActivity extends Activity implements 
 	BundleMessageReactor  {
@@ -29,6 +31,8 @@ public class MainActivity extends Activity implements
 	
 	private BundleMessageActor bmActor; 
 	private BundleMessageHelper messengerHelper;
+	
+	private final Handler delayedExecutionHandler = new Handler();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +46,24 @@ public class MainActivity extends Activity implements
 	@Override
 	protected void onResume() {
 		super.onResume();
+		
+		//register on messages
 		bmActor.register(this);
 		
-		Bundle resendClientStatusCommand = Command.RESEND_STATUS.toBundle();
-		messengerHelper.sendCommandBundle(resendClientStatusCommand);
+		
+		//start middleware
+		startService(new Intent(ServiceNames.BLUETOOTH_CLIENT_SERVICE));
+		
+		//wait until service is started
+		delayedExecutionHandler.postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				Bundle resendClientStatusCommand = Command.RESEND_STATUS.toBundle();
+				messengerHelper.sendCommandBundle(resendClientStatusCommand);
+			}
+		}, 300);
+		
 	}
 	
 	@Override
@@ -108,17 +126,22 @@ public class MainActivity extends Activity implements
 		switch (msg){
 			
 		case ITEM_FOUND:
+		case ITEM_NOT_FOUND:
+			
 			Item i;
 			try {
 				i = BundleMessage.getInstance().toItemFound(b);
-				Toast.makeText(this, "item found: "+i.getName(), Toast.LENGTH_SHORT)
+				String itemMsgString = "Item found: "+i.getName();
+				if (msg == BUNDLE_MESSAGE.ITEM_NOT_FOUND){
+					itemMsgString = "unknown Tag: "+i.getIds().get(0);
+				}
+				Toast.makeText(this,itemMsgString , Toast.LENGTH_SHORT)
 				.show();
 			} catch (JSONException e) {
 				Toast.makeText(this, "error reading item", Toast.LENGTH_SHORT)
 				.show();
 			}
-			
-			break;
+		break;
 		
 			default: break;
 		}
