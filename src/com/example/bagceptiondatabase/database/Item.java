@@ -40,10 +40,10 @@ public class Item {
 	
 	// Fields corresponding to database columns
 	public long id = -1;
-	public int tagid = 0;
+	public String tagid = "0";
 	public String name = "";
 	public String description = "";
-	public String visibility = "";
+	public int visibility = -1;
 	
 	// No need to do anything, fields are already set to default values above
 	public Item() {
@@ -53,10 +53,10 @@ public class Item {
 	// Convert informations from database into a Item object
 	public Item(final Cursor cursor){
 		this.id = cursor.getLong(0);
-		this.tagid = cursor.getInt(1);
+		this.tagid = cursor.getString(1);
 		this.name = cursor.getString(2);
 		this.description = cursor.getString(3);
-		this.visibility = cursor.getString(4);
+		this.visibility = cursor.getInt(4);
 	}
 	
 	// Return the fields in a ContentValues object, suitable for insertion into the database

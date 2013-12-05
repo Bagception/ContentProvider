@@ -36,8 +36,8 @@ public final class R {
         public static final int rounded_corners_white=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0026;
-        public static final int addTag=0x7f0a001f;
+        public static final int action_settings=0x7f0a0027;
+        public static final int addTag=0x7f0a0020;
         public static final int badge_small=0x7f0a0013;
         public static final int buttonItem=0x7f0a0004;
         public static final int buttonNewBag=0x7f0a0005;
@@ -46,14 +46,14 @@ public final class R {
         public static final int buttonTest1=0x7f0a0006;
         public static final int buttonTest2=0x7f0a0007;
         public static final int cancel=0x7f0a0015;
-        public static final int cancelButton=0x7f0a0021;
-        public static final int cardDescription=0x7f0a0025;
-        public static final int cardName=0x7f0a0023;
-        public static final int cardStatus=0x7f0a0024;
+        public static final int cancelButton=0x7f0a0022;
+        public static final int cardDescription=0x7f0a0026;
+        public static final int cardName=0x7f0a0024;
+        public static final int cardStatus=0x7f0a0025;
         public static final int check=0x7f0a0018;
         public static final int editName=0x7f0a000d;
         public static final int foundDevices=0x7f0a0009;
-        public static final int foundTags=0x7f0a0020;
+        public static final int foundTags=0x7f0a0021;
         public static final int itemDescription=0x7f0a001b;
         public static final int itemName=0x7f0a000c;
         public static final int itemPhoto=0x7f0a0012;
@@ -61,21 +61,22 @@ public final class R {
         public static final int item_detail_container=0x7f0a0001;
         public static final int item_list=0x7f0a0002;
         public static final int label=0x7f0a0017;
-        public static final int newItem=0x7f0a0027;
+        public static final int newItem=0x7f0a0028;
         public static final int noPairedDevices=0x7f0a0000;
+        public static final int radioVisib=0x7f0a001d;
         public static final int save=0x7f0a0016;
-        public static final int saveButton=0x7f0a0022;
+        public static final int saveButton=0x7f0a0023;
         public static final int tableRow=0x7f0a000a;
         public static final int tableRow2=0x7f0a000b;
         public static final int tableRow3=0x7f0a001a;
         public static final int tableRow4=0x7f0a000e;
         public static final int tableRow5=0x7f0a0011;
-        public static final int tableRow6=0x7f0a001e;
+        public static final int tableRow6=0x7f0a001f;
         public static final int tableRow7=0x7f0a0014;
         public static final int textDescription=0x7f0a001c;
         public static final int textName=0x7f0a0019;
-        public static final int textVisibility=0x7f0a001d;
         public static final int visibility=0x7f0a0010;
+        public static final int visibility2=0x7f0a001e;
     }
     public static final class layout {
         public static final int activity_current_connection=0x7f030000;

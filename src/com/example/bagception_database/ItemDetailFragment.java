@@ -10,7 +10,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.webkit.WebView.FindListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -33,7 +37,6 @@ public class ItemDetailFragment extends Fragment {
 	 * The dummy content this fragment is presenting.
 	 */
 	private Item mItem;
-	private LayoutInflater mInflater;
 	
 	/**
 	 * The UI elements showing the details of the Item
@@ -41,8 +44,9 @@ public class ItemDetailFragment extends Fragment {
 	private TextView textName;
 	private TextView textDescritption;
 	private Spinner spinner;
-	private CharSequence stringVisibility;
 	private TextView textVisibility;
+	private View rootView;
+	private RadioButton radioButton;
 	
 	/**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
@@ -67,7 +71,7 @@ public class ItemDetailFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_item_detail,
+		rootView = inflater.inflate(R.layout.fragment_item_detail,
 				container, false);
 		
 
@@ -79,11 +83,19 @@ public class ItemDetailFragment extends Fragment {
 			textDescritption = ((TextView) rootView.findViewById(R.id.textDescription));
 			textDescritption.setText(mItem.description);
 			
-			textVisibility = ((TextView) rootView.findViewById(R.id.textVisibility));
-			textVisibility.setText(mItem.visibility);
+			//textVisibility = ((TextView) rootView.findViewById(R.id.textVisibility));
+			//textVisibility.setText(mItem.visibility);
+			
+			if(mItem.visibility == 0 || mItem.visibility == -1) {
+				
+				radioButton = (RadioButton) rootView.findViewById(R.id.visibility);
+				radioButton.setChecked(true);
+			} else {
+				radioButton = (RadioButton) rootView.findViewById(R.id.visibility2);
+				radioButton.setChecked(true);
+			}
 			
 		}
-		
 		
 		saveButton = (Button) rootView.findViewById(R.id.saveButton);
 		saveButton.setOnClickListener(new OnClickListener() {
@@ -114,7 +126,13 @@ public class ItemDetailFragment extends Fragment {
 			
 			mItem.name = textName.getText().toString();
 			mItem.description = textDescritption.getText().toString();
-			mItem.visibility = textVisibility.getText().toString();
+			
+			if(rootView.findViewById(R.id.visibility).isSelected() == true) {
+				
+				mItem.visibility = 0;
+			} else {
+				mItem.visibility = 1;
+			}
 
 			DatabaseHandler.getInstance(getActivity()).putItem(mItem);
 			

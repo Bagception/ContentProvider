@@ -108,26 +108,23 @@
 	        android:text="@string/vis"
 	        android:textColor="@color/dark_text"
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
+        	
+		<RadioGroup 
+		    android:id="@+id/radioVisib"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content" >
         
-<!-- 	<Spinner
-	        android:id="@+id/visibility"
-	        android:entries="@array/visibility"
-	        android:layout_height="40dp"
-	        android:layout_marginRight="15dp"
-	        android:textAlignment="center"
-	        android:background="@color/background" />   
--->	        
-       <EditText
-	        android:id="@+id/textVisibility"
-	        android:layout_gravity="center"
-	        android:layout_marginRight="15dp"
-	        android:ems="10"
-	        android:inputType="text"
-	        android:layout_width="wrap_content"
-	        android:textColor="@color/dark_text" />
-	        
+		<RadioButton 
+		    android:id="@+id/visibility"
+		    android:text="@string/rb1"/>    
+		    
+		<RadioButton 
+		    android:id="@+id/visibility2"
+		    android:text="@string/rb2"/>	 
+		    
+		 </RadioGroup>
     </TableRow>
-    
+
     <TableRow
         android:id="@+id/tableRow5"
         android:layout_width="fill_parent"
