@@ -9,17 +9,17 @@ package com.example.bagception_database;
 
 public final class R {
     public static final class array {
-        public static final int ids=0x7f070000;
-        public static final int visibility=0x7f070001;
+        public static final int ids=0x7f080000;
+        public static final int visibility=0x7f080001;
     }
     public static final class attr {
     }
     public static final class color {
-        public static final int background=0x7f040001;
-        public static final int dark_text=0x7f040003;
-        public static final int light_blue=0x7f040000;
-        public static final int listitem=0x7f040004;
-        public static final int text=0x7f040002;
+        public static final int background=0x7f070001;
+        public static final int dark_text=0x7f070003;
+        public static final int light_blue=0x7f070000;
+        public static final int listitem=0x7f070004;
+        public static final int text=0x7f070002;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -27,59 +27,67 @@ public final class R {
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
+ Default screen margins, per the Android Design guidelines. 
+
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+    
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
         public static final int rounded_corners_white=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0026;
-        public static final int addTag=0x7f0a001f;
-        public static final int badge_small=0x7f0a0013;
-        public static final int buttonItem=0x7f0a0004;
-        public static final int buttonNewBag=0x7f0a0005;
-        public static final int buttonSettings=0x7f0a0008;
-        public static final int buttonShowFoundItems=0x7f0a0003;
-        public static final int buttonTest1=0x7f0a0006;
-        public static final int buttonTest2=0x7f0a0007;
-        public static final int cancel=0x7f0a0015;
-        public static final int cancelButton=0x7f0a0021;
-        public static final int cardDescription=0x7f0a0025;
-        public static final int cardName=0x7f0a0023;
-        public static final int cardStatus=0x7f0a0024;
-        public static final int check=0x7f0a0018;
-        public static final int editName=0x7f0a000d;
-        public static final int foundDevices=0x7f0a0009;
-        public static final int foundTags=0x7f0a0020;
-        public static final int itemDescription=0x7f0a001b;
-        public static final int itemName=0x7f0a000c;
-        public static final int itemPhoto=0x7f0a0012;
-        public static final int itemVisibility=0x7f0a000f;
-        public static final int item_detail_container=0x7f0a0001;
-        public static final int item_list=0x7f0a0002;
-        public static final int label=0x7f0a0017;
-        public static final int newItem=0x7f0a0027;
+        public static final int action_settings=0x7f0a0028;
+        public static final int addTag=0x7f0a0021;
+        public static final int badge_small=0x7f0a0015;
+        public static final int buttonItem=0x7f0a0006;
+        public static final int buttonNewBag=0x7f0a0007;
+        public static final int buttonSettings=0x7f0a000a;
+        public static final int buttonShowFoundItems=0x7f0a0005;
+        public static final int buttonTest1=0x7f0a0008;
+        public static final int buttonTest2=0x7f0a0009;
+        public static final int cancel=0x7f0a0017;
+        public static final int cancelButton=0x7f0a0023;
+        public static final int cardDescription=0x7f0a0027;
+        public static final int cardName=0x7f0a0025;
+        public static final int cardStatus=0x7f0a0026;
+        public static final int check=0x7f0a001a;
+        public static final int dialogText=0x7f0a0001;
+        public static final int editName=0x7f0a000f;
+        public static final int foundDevices=0x7f0a000b;
+        public static final int foundTags=0x7f0a0022;
+        public static final int itemDescription=0x7f0a001d;
+        public static final int itemName=0x7f0a000e;
+        public static final int itemPhoto=0x7f0a0014;
+        public static final int itemVisibility=0x7f0a0011;
+        public static final int item_detail_container=0x7f0a0003;
+        public static final int item_list=0x7f0a0004;
+        public static final int label=0x7f0a0019;
+        public static final int newItem=0x7f0a0029;
         public static final int noPairedDevices=0x7f0a0000;
-        public static final int save=0x7f0a0016;
-        public static final int saveButton=0x7f0a0022;
-        public static final int tableRow=0x7f0a000a;
-        public static final int tableRow2=0x7f0a000b;
-        public static final int tableRow3=0x7f0a001a;
-        public static final int tableRow4=0x7f0a000e;
-        public static final int tableRow5=0x7f0a0011;
-        public static final int tableRow6=0x7f0a001e;
-        public static final int tableRow7=0x7f0a0014;
-        public static final int textDescription=0x7f0a001c;
-        public static final int textName=0x7f0a0019;
-        public static final int textVisibility=0x7f0a001d;
-        public static final int visibility=0x7f0a0010;
+        public static final int okButton=0x7f0a0002;
+        public static final int save=0x7f0a0018;
+        public static final int saveButton=0x7f0a0024;
+        public static final int tableRow=0x7f0a000c;
+        public static final int tableRow2=0x7f0a000d;
+        public static final int tableRow3=0x7f0a001c;
+        public static final int tableRow4=0x7f0a0010;
+        public static final int tableRow5=0x7f0a0013;
+        public static final int tableRow6=0x7f0a0020;
+        public static final int tableRow7=0x7f0a0016;
+        public static final int textDescription=0x7f0a001e;
+        public static final int textName=0x7f0a001b;
+        public static final int textVisibility=0x7f0a001f;
+        public static final int visibility=0x7f0a0012;
     }
     public static final class layout {
         public static final int activity_current_connection=0x7f030000;
-        public static final int activity_item_detail=0x7f030001;
+        public static final int activity_dialog=0x7f030001;
+        public static final int activity_item_detail=0x7f030002;
         /** 
     Layout alias to replace the single-pane version of the layout with a
     two-pane version on Large screens.
@@ -97,71 +105,73 @@ public final class R {
 
     
          */
-        public static final int activity_item_list=0x7f030002;
-        public static final int activity_item_twopane=0x7f030003;
-        public static final int activity_main=0x7f030004;
-        public static final int activity_show_found_tags=0x7f030005;
-        public static final int activity_test__gui_1=0x7f030006;
-        public static final int activity_test__gui_2=0x7f030007;
-        public static final int fragment_item_detail=0x7f030008;
-        public static final int fragment_item_list=0x7f030009;
-        public static final int item_listitem=0x7f03000a;
+        public static final int activity_item_list=0x7f030003;
+        public static final int activity_item_twopane=0x7f030004;
+        public static final int activity_main=0x7f030005;
+        public static final int activity_show_found_tags=0x7f030006;
+        public static final int activity_test__gui_1=0x7f030007;
+        public static final int activity_test__gui_2=0x7f030008;
+        public static final int fragment_item_detail=0x7f030009;
+        public static final int fragment_item_list=0x7f03000a;
+        public static final int item_listitem=0x7f03000b;
     }
     public static final class menu {
         public static final int add_new_bag=0x7f090000;
         public static final int list_activity=0x7f090001;
         public static final int main=0x7f090002;
-        public static final int show_found_tags=0x7f090003;
-        public static final int test__gui_1=0x7f090004;
-        public static final int test__gui_2=0x7f090005;
+        public static final int service_observable=0x7f090003;
+        public static final int show_found_tags=0x7f090004;
+        public static final int test__gui_1=0x7f090005;
+        public static final int test__gui_2=0x7f090006;
     }
     public static final class string {
-        public static final int FoundItemsTitle=0x7f060029;
-        public static final int action_settings=0x7f060003;
-        public static final int activity=0x7f060010;
-        public static final int addTag=0x7f060020;
-        public static final int additionalFunctions=0x7f060025;
-        public static final int app_name=0x7f060000;
-        public static final int cancel=0x7f06000d;
-        public static final int changeItem=0x7f060026;
-        public static final int chooseButton=0x7f060022;
-        public static final int chooseItem=0x7f060021;
-        public static final int context=0x7f060011;
-        public static final int des=0x7f060008;
-        public static final int description=0x7f06001a;
-        public static final int football=0x7f060023;
-        public static final int forgot=0x7f060024;
-        public static final int foto=0x7f06000a;
-        public static final int headText=0x7f06000e;
-        public static final int hello_activity=0x7f060017;
-        public static final int hello_context=0x7f060018;
-        public static final int hello_item=0x7f060015;
-        public static final int hello_place=0x7f060016;
-        public static final int hello_world=0x7f060004;
-        public static final int item=0x7f060006;
-        public static final int itemName=0x7f060019;
-        public static final int itemPhoto=0x7f06001c;
-        public static final int itemPlace=0x7f06001d;
-        public static final int itemVisibility=0x7f06001b;
-        public static final int menu_items=0x7f060005;
-        public static final int name=0x7f060007;
-        public static final int place=0x7f06000f;
-        public static final int rb1=0x7f06001e;
-        public static final int rb2=0x7f06001f;
-        public static final int save=0x7f06000c;
-        public static final int showFoundItems=0x7f060028;
-        public static final int showItems=0x7f060027;
-        public static final int tag=0x7f06000b;
-        public static final int title_activity_add=0x7f060013;
-        public static final int title_activity_add_context=0x7f060014;
-        public static final int title_activity_add_new_bag=0x7f06002c;
-        public static final int title_activity_add_place=0x7f060012;
-        public static final int title_activity_main=0x7f060002;
-        public static final int title_activity_show_found_tags=0x7f06002d;
-        public static final int title_activity_test__gui_1=0x7f06002a;
-        public static final int title_activity_test__gui_2=0x7f06002b;
-        public static final int title_item_detail=0x7f060001;
-        public static final int vis=0x7f060009;
+        public static final int FoundItemsTitle=0x7f04002a;
+        public static final int action_settings=0x7f040002;
+        public static final int activity=0x7f040011;
+        public static final int addTag=0x7f040021;
+        public static final int additionalFunctions=0x7f040026;
+        public static final int app_name=0x7f040000;
+        public static final int cancel=0x7f04000e;
+        public static final int changeItem=0x7f040027;
+        public static final int chooseButton=0x7f040023;
+        public static final int chooseItem=0x7f040022;
+        public static final int context=0x7f040012;
+        public static final int des=0x7f040009;
+        public static final int description=0x7f04001b;
+        public static final int football=0x7f040024;
+        public static final int forgot=0x7f040025;
+        public static final int foto=0x7f04000b;
+        public static final int headText=0x7f04000f;
+        public static final int hello_activity=0x7f040018;
+        public static final int hello_context=0x7f040019;
+        public static final int hello_item=0x7f040016;
+        public static final int hello_place=0x7f040017;
+        public static final int hello_world=0x7f040003;
+        public static final int item=0x7f040007;
+        public static final int itemName=0x7f04001a;
+        public static final int itemPhoto=0x7f04001d;
+        public static final int itemPlace=0x7f04001e;
+        public static final int itemVisibility=0x7f04001c;
+        public static final int menu_items=0x7f040006;
+        public static final int name=0x7f040008;
+        public static final int place=0x7f040010;
+        public static final int rb1=0x7f04001f;
+        public static final int rb2=0x7f040020;
+        public static final int save=0x7f04000d;
+        public static final int showFoundItems=0x7f040029;
+        public static final int showItems=0x7f040028;
+        public static final int tag=0x7f04000c;
+        public static final int title_activity_add=0x7f040014;
+        public static final int title_activity_add_context=0x7f040015;
+        public static final int title_activity_add_new_bag=0x7f04002d;
+        public static final int title_activity_add_place=0x7f040013;
+        public static final int title_activity_main=0x7f040005;
+        public static final int title_activity_service_observable=0x7f040001;
+        public static final int title_activity_show_found_tags=0x7f04002e;
+        public static final int title_activity_test__gui_1=0x7f04002b;
+        public static final int title_activity_test__gui_2=0x7f04002c;
+        public static final int title_item_detail=0x7f040004;
+        public static final int vis=0x7f04000a;
     }
     public static final class style {
         /** 
@@ -184,11 +194,121 @@ public final class R {
         res/values-v11/styles.xml on API 14+ devices.
     
  API 14 theme customizations can go here. 
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
+
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    
+ API 11 theme customizations can go here. 
+
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    
+ API 14 theme customizations can go here. 
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
+
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    
+ API 11 theme customizations can go here. 
+
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    
+ API 14 theme customizations can go here. 
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
+
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    
+ API 11 theme customizations can go here. 
+
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    
+ API 14 theme customizations can go here. 
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
+
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    
+ API 11 theme customizations can go here. 
+
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    
+ API 14 theme customizations can go here. 
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
+
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    
+ API 11 theme customizations can go here. 
+
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    
+ API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f050000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
+        public static final int AppTheme=0x7f050001;
     }
 }

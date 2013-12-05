@@ -1,24 +1,57 @@
 package com.example.bagception_database;
 
+import org.json.JSONException;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Toast;
+
 import com.example.bagception_database.gui.ShowFoundTags;
 import com.example.bagception_database.gui.Test_GUI_1;
 import com.example.bagception_database.gui.Test_GUI_2;
 
-import android.os.Bundle;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
+import de.philipphock.android.lib.logging.LOG;
+import de.uniulm.bagception.bluetoothclientmessengercommunication.actor.BundleMessageActor;
+import de.uniulm.bagception.bluetoothclientmessengercommunication.actor.BundleMessageReactor;
+import de.uniulm.bagception.bluetoothclientmessengercommunication.service.BundleMessageHelper;
+import de.uniulm.bagception.bundlemessageprotocol.BundleMessage;
+import de.uniulm.bagception.bundlemessageprotocol.BundleMessage.BUNDLE_MESSAGE;
+import de.uniulm.bagception.bundlemessageprotocol.entities.Item;
+import de.uniulm.bagception.protocol.bundle.constants.Command;
+import de.uniulm.bagception.protocol.bundle.constants.StatusCode;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements 
+	BundleMessageReactor  {
 
+	
+	private BundleMessageActor bmActor; 
+	private BundleMessageHelper messengerHelper;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		bmActor = new BundleMessageActor(this); //to recv  messages
+		messengerHelper = new BundleMessageHelper(this); //to send messages
 		setContentView(R.layout.activity_main);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		bmActor.register(this);
+		
+		Bundle resendClientStatusCommand = Command.RESEND_STATUS.toBundle();
+		messengerHelper.sendCommandBundle(resendClientStatusCommand);
+	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		bmActor.unregister(this);
 	}
 
 	@Override
@@ -62,4 +95,81 @@ public class MainActivity extends Activity {
 				"de.uniulm.bagception.clientSettings.UI.SettingsActivity");
 		startActivity(showSettings);
 	}
+	
+	
+	// \\BundleMessageReactor//
+
+	@Override
+	public void onBundleMessageRecv(Bundle b) {
+		//those messages come from the remote bluetooth device, not from the BluetoothMiddleware		
+
+		LOG.out(this, b);
+		BUNDLE_MESSAGE msg = BundleMessage.getInstance().getBundleMessageType(b);
+		switch (msg){
+			
+		case ITEM_FOUND:
+			Item i;
+			try {
+				i = BundleMessage.getInstance().toItemFound(b);
+				Toast.makeText(this, "item found: "+i.getName(), Toast.LENGTH_SHORT)
+				.show();
+			} catch (JSONException e) {
+				Toast.makeText(this, "error reading item", Toast.LENGTH_SHORT)
+				.show();
+			}
+			
+			break;
+		
+			default: break;
+		}
+		
+	}
+
+	@Override
+	public void onBundleMessageSend(Bundle b) {
+		//nothing to do here
+		
+	}
+
+	@Override
+	public void onResponseMessage(Bundle b) {
+		//nothing to do here
+		
+	}
+
+	@Override
+	public void onResponseAnswerMessage(Bundle b) {
+		//nothing to do here
+	}
+
+	@Override
+	public void onStatusMessage(Bundle b) {
+		//messages from bt-middleware
+		StatusCode status = StatusCode.getStatusCode(b);
+		switch (status){
+		case CONNECTED:
+			Toast.makeText(this, "connected with bag", Toast.LENGTH_SHORT).show();
+			break;
+			
+		case DISCONNECTED:
+			Bundle scanDevicesCommand = Command.getCommandBundle(Command.TRIGGER_SCAN_DEVICES);
+			messengerHelper.sendCommandBundle(scanDevicesCommand);
+			break;
+			
+			default: break;
+		}
+	}
+
+	@Override
+	public void onCommandMessage(Bundle b) {
+		//nothing to do here
+	}
+
+	@Override
+	public void onError(Exception e) {
+		//??
+	}
+
+	//BundleMessageReactor\\
+
 }
