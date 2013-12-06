@@ -5,7 +5,6 @@ import org.json.JSONException;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
@@ -15,61 +14,34 @@ import com.example.bagception_database.gui.Test_GUI_1;
 import com.example.bagception_database.gui.Test_GUI_2;
 
 import de.philipphock.android.lib.logging.LOG;
-import de.uniulm.bagception.bluetoothclientmessengercommunication.actor.BundleMessageActor;
 import de.uniulm.bagception.bluetoothclientmessengercommunication.actor.BundleMessageReactor;
 import de.uniulm.bagception.bluetoothclientmessengercommunication.service.BundleMessageHelper;
 import de.uniulm.bagception.bundlemessageprotocol.BundleMessage;
 import de.uniulm.bagception.bundlemessageprotocol.BundleMessage.BUNDLE_MESSAGE;
 import de.uniulm.bagception.bundlemessageprotocol.entities.Item;
 import de.uniulm.bagception.protocol.bundle.constants.Command;
-import de.uniulm.bagception.protocol.bundle.constants.StatusCode;
-import de.uniulm.bagception.services.ServiceNames;
 
 public class MainActivity extends Activity implements 
 	BundleMessageReactor  {
 
-	
-	private BundleMessageActor bmActor; 
-	private BundleMessageHelper messengerHelper;
-	
-	private final Handler delayedExecutionHandler = new Handler();
-	
+
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		bmActor = new BundleMessageActor(this); //to recv  messages
-		messengerHelper = new BundleMessageHelper(this); //to send messages
 		setContentView(R.layout.activity_main);
 	}
 	
 	@Override
 	protected void onResume() {
+		new BundleMessageHelper(this).sendCommandBundle(Command.TRIGGER_SCAN_DEVICES.toBundle());
 		super.onResume();
-		
-		//register on messages
-		bmActor.register(this);
-		
-		
-		//start middleware
-		startService(new Intent(ServiceNames.BLUETOOTH_CLIENT_SERVICE));
-		
-		//wait until service is started
-		delayedExecutionHandler.postDelayed(new Runnable() {
-			
-			@Override
-			public void run() {
-				Bundle resendClientStatusCommand = Command.RESEND_STATUS.toBundle();
-				messengerHelper.sendCommandBundle(resendClientStatusCommand);
-			}
-		}, 300);
-		
 	}
 	
 	@Override
 	protected void onPause() {
 		super.onPause();
-		bmActor.unregister(this);
 	}
 
 	@Override
@@ -167,20 +139,6 @@ public class MainActivity extends Activity implements
 
 	@Override
 	public void onStatusMessage(Bundle b) {
-		//messages from bt-middleware
-		StatusCode status = StatusCode.getStatusCode(b);
-		switch (status){
-		case CONNECTED:
-			Toast.makeText(this, "connected with bag", Toast.LENGTH_SHORT).show();
-			break;
-			
-		case DISCONNECTED:
-			Bundle scanDevicesCommand = Command.getCommandBundle(Command.TRIGGER_SCAN_DEVICES);
-			messengerHelper.sendCommandBundle(scanDevicesCommand);
-			break;
-			
-			default: break;
-		}
 	}
 
 	@Override
