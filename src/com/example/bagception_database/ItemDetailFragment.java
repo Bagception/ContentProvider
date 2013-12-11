@@ -1,10 +1,16 @@
 package com.example.bagception_database;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +26,8 @@ import android.widget.TextView;
 
 import com.example.bagceptiondatabase.database.DatabaseHandler;
 import com.example.bagceptiondatabase.database.Item;
+
+import de.uniulm.bagception.bundlemessageprotocol.BundleMessage;
 
 /**
  * A fragment representing a single Item detail screen. This fragment is either
@@ -37,6 +45,7 @@ public class ItemDetailFragment extends Fragment {
 	 * The dummy content this fragment is presenting.
 	 */
 	private Item mItem;
+	de.uniulm.bagception.bundlemessageprotocol.entities.Item item;
 	
 	/**
 	 * The UI elements showing the details of the Item
@@ -47,6 +56,10 @@ public class ItemDetailFragment extends Fragment {
 	private TextView textVisibility;
 	private View rootView;
 	private RadioButton radioButton;
+	private RadioButton radioButton2;
+	private SQLiteDatabase db;
+	private static String id;
+	private static Bundle tagid;
 	
 	/**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
@@ -58,11 +71,26 @@ public class ItemDetailFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		String args = getArguments().toString();
+		
 		if (getArguments().containsKey(ARG_ITEM_ID)) {
 			
 			// Should use the ContentProvider ideally
 			mItem = DatabaseHandler.getInstance(getActivity()).getItem(getArguments().getLong(ARG_ITEM_ID));
+		} 
+
+		if (getArguments().containsKey("item")){
+			Log.d("MyActivity", getArguments().toString());
+			String itemJsonString = getArguments().getString("item");
+			try {
+				JSONObject json = new JSONObject(itemJsonString);
+				item = de.uniulm.bagception.bundlemessageprotocol.entities.Item.fromJSON(json);
+				id = item.getIds().get(0);
+				mItem = new Item();
+				
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -71,8 +99,7 @@ public class ItemDetailFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		rootView = inflater.inflate(R.layout.fragment_item_detail,
-				container, false);
+		rootView = inflater.inflate(R.layout.fragment_item_detail, container, false);
 		
 
 		if (mItem != null) {
@@ -90,7 +117,13 @@ public class ItemDetailFragment extends Fragment {
 				
 				radioButton = (RadioButton) rootView.findViewById(R.id.visibility);
 				radioButton.setChecked(true);
+				
+				radioButton2 = (RadioButton) rootView.findViewById(R.id.visibility2);
+				radioButton2.setChecked(false);
 			} else {
+				radioButton = (RadioButton) rootView.findViewById(R.id.visibility);
+				radioButton.setChecked(false);
+				
 				radioButton = (RadioButton) rootView.findViewById(R.id.visibility2);
 				radioButton.setChecked(true);
 			}
@@ -123,14 +156,22 @@ public class ItemDetailFragment extends Fragment {
 	public void updateItemFromUI() {
 		
 		if(mItem != null) {
-			
 			mItem.name = textName.getText().toString();
-			mItem.description = textDescritption.getText().toString();
 			
+			}
+
+			if(id != null){
+				mItem.description = id;
+			} else {
+				mItem.description = textDescritption.getText().toString();
+			}
+				
+				
 			if(rootView.findViewById(R.id.visibility).isSelected() == true) {
 				
 				mItem.visibility = 0;
 			} else {
+				
 				mItem.visibility = 1;
 			}
 
@@ -152,6 +193,7 @@ public class ItemDetailFragment extends Fragment {
 			
 			ad.setIcon(R.drawable.ic_launcher);
 			ad.show();
-		}
 	}
 }
+
+

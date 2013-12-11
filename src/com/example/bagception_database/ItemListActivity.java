@@ -98,7 +98,7 @@ public class ItemListActivity extends FragmentActivity implements
 			
 			// Create a new Item
 			Item i = new Item();
-			DatabaseHandler.getInstance(this).putItem(i);
+			//DatabaseHandler.getInstance(this).putItem(i);
 			
 			// Open a new fragment with new id
 			onItemSelected(i.id);

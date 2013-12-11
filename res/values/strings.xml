@@ -9,7 +9,7 @@
     <string name="menu_items">Alle Gegenstände</string>
     <string name="item">Gegenstand</string>
     <string name="name">Name</string>
-    <string name="des">Beschreibung</string>
+    <string name="des">TagID</string>
     <string name="vis">Sichtbarkeit</string>
     <string name="foto">Bild</string>
     <string name="tag">Tag ID</string>

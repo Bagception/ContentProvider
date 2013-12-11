@@ -1,9 +1,13 @@
 package com.example.bagception_database;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -38,15 +42,28 @@ public class ItemDetailActivity extends FragmentActivity {
 			// Create the detail fragment and add it to the activity
 			// using a fragment transaction.
 			Bundle arguments = new Bundle();
+			String itemJsonString = getIntent().getStringExtra("item");
+			if (itemJsonString != null){
+				//called from broadcast
+				arguments.putString("item", itemJsonString);
+				
+			}else{
+				//called from UI
+				arguments.putLong(ItemDetailFragment.ARG_ITEM_ID, getIntent().getLongExtra(ItemDetailFragment.ARG_ITEM_ID, -1));
+				
+			}
 			arguments.putLong(ItemDetailFragment.ARG_ITEM_ID, getIntent().getLongExtra(ItemDetailFragment.ARG_ITEM_ID, -1));
 			ItemDetailFragment fragment = new ItemDetailFragment();
 			fragment.setArguments(arguments);
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.item_detail_container, fragment).commit();
+			//Log.d("MyActivity", arguments.toString());
+			getSupportFragmentManager().beginTransaction().add(R.id.item_detail_container, fragment).commit();
 		}
 		
 	}
 
+
+	
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

@@ -3,8 +3,13 @@ package com.example.bagception_database;
 import org.json.JSONException;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
@@ -14,6 +19,7 @@ import com.example.bagception_database.gui.Test_GUI_1;
 import com.example.bagception_database.gui.Test_GUI_2;
 
 import de.philipphock.android.lib.logging.LOG;
+import de.uniulm.bagception.bluetoothclientmessengercommunication.actor.BundleMessageActor;
 import de.uniulm.bagception.bluetoothclientmessengercommunication.actor.BundleMessageReactor;
 import de.uniulm.bagception.bluetoothclientmessengercommunication.service.BundleMessageHelper;
 import de.uniulm.bagception.bundlemessageprotocol.BundleMessage;
@@ -24,23 +30,29 @@ import de.uniulm.bagception.protocol.bundle.constants.Command;
 public class MainActivity extends Activity implements 
 	BundleMessageReactor  {
 
-
+	private BundleMessageActor bma;
+	protected SQLiteDatabase db;
+	protected Cursor cursor;
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		bma = new BundleMessageActor(this);
 		
 		setContentView(R.layout.activity_main);
 	}
 	
 	@Override
 	protected void onResume() {
+		bma.register(this);
 		new BundleMessageHelper(this).sendCommandBundle(Command.TRIGGER_SCAN_DEVICES.toBundle());
 		super.onResume();
 	}
 	
 	@Override
 	protected void onPause() {
+		bma.unregister(this);
 		super.onPause();
 	}
 
@@ -95,20 +107,54 @@ public class MainActivity extends Activity implements
 
 		LOG.out(this, b);
 		BUNDLE_MESSAGE msg = BundleMessage.getInstance().getBundleMessageType(b);
+
 		switch (msg){
 			
 		case ITEM_FOUND:
 		case ITEM_NOT_FOUND:
-			
+			final Intent startActivityIntent = new Intent(this,ItemDetailActivity.class);
 			Item i;
 			try {
 				i = BundleMessage.getInstance().toItemFound(b);
-				String itemMsgString = "Item found: "+i.getName();
+				String itemJson = i.toString();
+				String id = i.getName();
+				id = i.getIds().get(0);
+				startActivityIntent.putExtra("item", itemJson);
+				Log.d("MyActivity", id);
+				//cursor = db.rawQuery("SELECT COL_DES FROM Item WHERE COL_DES LIKE ?", new String[]{"%" + id + "%"});
+				//Log.d("MyActivity", cursor.toString());
+				
 				if (msg == BUNDLE_MESSAGE.ITEM_NOT_FOUND){
-					itemMsgString = "unknown Tag: "+i.getIds().get(0);
+					
+					
+					AlertDialog.Builder ad = new AlertDialog.Builder(this);
+					ad.setMessage("Wie wollen Sie weiter vorgehen?");
+					
+					ad.setPositiveButton("Item erweitern", new DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							
+							startActivity(startActivityIntent);							
+						}
+					});
+					
+					ad.setNegativeButton("Item anlegen", new DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							
+							startActivity(startActivityIntent);
+						}
+					});
+					
+					AlertDialog alert = ad.create();
+					alert.show();
+					
+				}else{
+					
 				}
-				Toast.makeText(this,itemMsgString , Toast.LENGTH_SHORT)
-				.show();
+				
 			} catch (JSONException e) {
 				Toast.makeText(this, "error reading item", Toast.LENGTH_SHORT)
 				.show();
