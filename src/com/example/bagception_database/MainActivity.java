@@ -131,6 +131,15 @@ public class MainActivity extends Activity implements
 					AlertDialog.Builder ad = new AlertDialog.Builder(this);
 					ad.setMessage("Item gefunden: " + item_name);
 					
+					ad.setNegativeButton("Item editieren", new DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							
+							startActivity(startActivityIntent_new);
+						}
+					});
+					
 					AlertDialog alert = ad.create();
 					alert.show();
 				} else {
