@@ -17,6 +17,8 @@ import android.widget.Toast;
 import com.example.bagception_database.gui.ShowFoundTags;
 import com.example.bagception_database.gui.Test_GUI_1;
 import com.example.bagception_database.gui.Test_GUI_2;
+import com.example.bagceptiondatabase.database.DatabaseHandler;
+import com.example.bagceptiondatabase.database.*;
 
 import de.philipphock.android.lib.logging.LOG;
 import de.uniulm.bagception.bluetoothclientmessengercommunication.actor.BundleMessageActor;
@@ -33,7 +35,7 @@ public class MainActivity extends Activity implements
 	private BundleMessageActor bma;
 	protected SQLiteDatabase db;
 	protected Cursor cursor;
-		
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -112,49 +114,59 @@ public class MainActivity extends Activity implements
 			
 		case ITEM_FOUND:
 		case ITEM_NOT_FOUND:
-			final Intent startActivityIntent = new Intent(this,ItemDetailActivity.class);
+			final Intent startActivityIntent_new = new Intent(this,ItemDetailActivity.class);
+			final Intent startActivityIntent_add = new Intent(this, ItemListActivity.class);
 			Item i;
 			try {
 				i = BundleMessage.getInstance().toItemFound(b);
 				String itemJson = i.toString();
 				String id = i.getName();
 				id = i.getIds().get(0);
-				startActivityIntent.putExtra("item", itemJson);
-				Log.d("MyActivity", id);
-				//cursor = db.rawQuery("SELECT COL_DES FROM Item WHERE COL_DES LIKE ?", new String[]{"%" + id + "%"});
-				//Log.d("MyActivity", cursor.toString());
+				startActivityIntent_new.putExtra("item", itemJson);
 				
-				if (msg == BUNDLE_MESSAGE.ITEM_NOT_FOUND){
-					
+				String item_name = DatabaseHandler.getInstance(getApplication()).searchItem(id);
+				
+				if (item_name != null){
 					
 					AlertDialog.Builder ad = new AlertDialog.Builder(this);
-					ad.setMessage("Wie wollen Sie weiter vorgehen?");
-					
-					ad.setPositiveButton("Item erweitern", new DialogInterface.OnClickListener() {
-						
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							
-							startActivity(startActivityIntent);							
-						}
-					});
-					
-					ad.setNegativeButton("Item anlegen", new DialogInterface.OnClickListener() {
-						
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							
-							startActivity(startActivityIntent);
-						}
-					});
+					ad.setMessage("Item gefunden: " + item_name);
 					
 					AlertDialog alert = ad.create();
 					alert.show();
+				} else {
 					
-				}else{
 					
+					if (msg == BUNDLE_MESSAGE.ITEM_NOT_FOUND){
+						
+						
+						AlertDialog.Builder ad = new AlertDialog.Builder(this);
+						ad.setMessage("Wie wollen Sie weiter vorgehen?");
+						
+						ad.setPositiveButton("Item erweitern", new DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								
+								startActivity(startActivityIntent_add);							
+							}
+						});
+						
+						ad.setNegativeButton("Item anlegen", new DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								
+								startActivity(startActivityIntent_new);
+							}
+						});
+						
+						AlertDialog alert = ad.create();
+						alert.show();
+						
+					}else{
+						
+					}
 				}
-				
 			} catch (JSONException e) {
 				Toast.makeText(this, "error reading item", Toast.LENGTH_SHORT)
 				.show();
@@ -196,7 +208,7 @@ public class MainActivity extends Activity implements
 	public void onError(Exception e) {
 		//??
 	}
-
+	
 	//BundleMessageReactor\\
 
 }

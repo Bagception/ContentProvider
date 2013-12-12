@@ -102,6 +102,25 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 		context.getContentResolver().notifyChange(BagceptionProvider.URI_ITEMS, null, false);
 	}
 	
+	public String searchItem(final String id) {
+		
+		final SQLiteDatabase db = this.getReadableDatabase();
+		final Cursor cursor = db.query(Item.TABLE_NAME, Item.FIELDS, Item.COL_DES + " IS ?", new String[] {String.valueOf(id)}, null, null, null, null);
+		
+		if(cursor == null || cursor.isAfterLast()) {
+			return null;
+		}
+		
+		String item = null;
+		if(cursor.moveToFirst()) {
+			Item i = new Item(cursor);
+			int index = cursor.getColumnIndex("name");
+			item = cursor.getString(index);
+			//item = i.getContent().toString();
+		}
+		
+		cursor.close();
+		return item;
+	}
 	
-
 }

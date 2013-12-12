@@ -44,7 +44,7 @@ public class ItemDetailFragment extends Fragment {
 	/**
 	 * The dummy content this fragment is presenting.
 	 */
-	private Item mItem;
+	private static Item mItem;
 	de.uniulm.bagception.bundlemessageprotocol.entities.Item item;
 	
 	/**
@@ -58,8 +58,8 @@ public class ItemDetailFragment extends Fragment {
 	private RadioButton radioButton;
 	private RadioButton radioButton2;
 	private SQLiteDatabase db;
-	private static String id;
-	private static Bundle tagid;
+	private String id;
+	private Bundle tagid;
 	
 	/**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
@@ -80,13 +80,18 @@ public class ItemDetailFragment extends Fragment {
 		} 
 
 		if (getArguments().containsKey("item")){
-			Log.d("MyActivity", getArguments().toString());
+			//Log.d("MyActivity", getArguments().toString());
 			String itemJsonString = getArguments().getString("item");
 			try {
 				JSONObject json = new JSONObject(itemJsonString);
 				item = de.uniulm.bagception.bundlemessageprotocol.entities.Item.fromJSON(json);
 				id = item.getIds().get(0);
-				mItem = new Item();
+				
+//				mItem = DatabaseHandler.getInstance(getActivity()).searchItem(id);
+//				if(mItem == null){
+					mItem = new Item();
+//				}
+				
 				
 			} catch (JSONException e) {
 				e.printStackTrace();

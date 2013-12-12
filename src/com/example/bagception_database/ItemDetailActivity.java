@@ -42,7 +42,7 @@ public class ItemDetailActivity extends FragmentActivity {
 			// Create the detail fragment and add it to the activity
 			// using a fragment transaction.
 			Bundle arguments = new Bundle();
-			String itemJsonString = getIntent().getStringExtra("item");
+			String itemJsonString = getIntent().getStringExtra("item"); 
 			if (itemJsonString != null){
 				//called from broadcast
 				arguments.putString("item", itemJsonString);
