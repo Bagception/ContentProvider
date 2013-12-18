@@ -8,7 +8,7 @@ import android.net.Uri;
 public class BagceptionProvider extends ContentProvider {
 	
 	// All URIs share these parts
-	public static final String AUTHORITY = "com.example.bagceptiondatabase.database.provider";
+	public static final String AUTHORITY = "de.uniulm.bagceptiondatabase.database.provider";
 	public static final String SCHEME = "content://";
 	
 	// URIs

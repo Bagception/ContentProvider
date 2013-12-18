@@ -113,7 +113,7 @@ public class ItemDetailFragment extends Fragment {
 			textName.setText(mItem.name);
 			
 			textDescritption = ((TextView) rootView.findViewById(R.id.textDescription));
-			textDescritption.setText(mItem.description);
+			textDescritption.setText(mItem.tagid);
 			
 			//textVisibility = ((TextView) rootView.findViewById(R.id.textVisibility));
 			//textVisibility.setText(mItem.visibility);
@@ -166,9 +166,9 @@ public class ItemDetailFragment extends Fragment {
 			}
 
 			if(id != null){
-				mItem.description = id;
+				mItem.tagid = id;
 			} else {
-				mItem.description = textDescritption.getText().toString();
+				mItem.tagid = textDescritption.getText().toString();
 			}
 				
 				

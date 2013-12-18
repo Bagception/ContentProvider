@@ -78,7 +78,7 @@ public class ItemListFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 
 		setListAdapter(new SimpleCursorAdapter(getActivity(), R.layout.item_listitem, null, 
-				new String[] {Item.COL_NAME, Item.COL_DES, Item.COL_VIS}, 
+				new String[] {Item.COL_NAME, Item.COL_TAGID, Item.COL_VIS}, 
 				new int[] {R.id.cardName, R.id.cardDescription}, 0));
 		
 		// Load the content
