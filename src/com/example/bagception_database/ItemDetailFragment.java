@@ -1,40 +1,44 @@
-package com.example.bagception_database;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.example.bagceptiondatabase.database.BagceptionProvider;
-
-import android.app.AlertDialog;
-import android.app.LoaderManager.LoaderCallbacks;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.Loader;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SimpleCursorAdapter;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
+//package com.example.bagception_database;
+//
+//import org.json.JSONException;
+//import org.json.JSONObject;
+//
+//import com.example.bagceptiondatabase.database.BagceptionProvider;
+//
+//import android.app.AlertDialog;
+//import android.app.LoaderManager.LoaderCallbacks;
+//import android.content.DialogInterface;
+//import android.content.Intent;
+//import android.content.Loader;
+//import android.content.pm.PackageManager;
+//import android.database.Cursor;
+//import android.database.sqlite.SQLiteDatabase;
+//import android.net.Uri;
+//import android.os.Bundle;
+//import android.os.Environment;
+//import android.support.v4.app.Fragment;
+//import android.support.v4.widget.SimpleCursorAdapter;
+//import android.util.Log;
+//import android.view.LayoutInflater;
+//import android.view.Menu;
+//import android.view.MenuInflater;
+//import android.view.View;
+//import android.view.View.OnClickListener;
+//import android.view.ViewGroup;
+//import android.webkit.WebView.FindListener;
+//import android.widget.AdapterView;
+//import android.widget.AdapterView.OnItemSelectedListener;
+//import android.widget.Button;
+//import android.widget.ImageView;
+//import android.widget.RadioButton;
+//import android.widget.RadioGroup;
+//import android.widget.Spinner;
+//import android.widget.TextView;
 //
 //import com.example.bagceptiondatabase.database.DatabaseHandler;
 //import com.example.bagceptiondatabase.database.Item;
 //
-import de.uniulm.bagception.bundlemessageprotocol.BundleMessage;
+//import de.uniulm.bagception.bundlemessageprotocol.BundleMessage;
 //
 ///**
 // * A fragment representing a single Item detail screen. This fragment is either
@@ -119,7 +123,7 @@ import de.uniulm.bagception.bundlemessageprotocol.BundleMessage;
 //			textName = ((TextView) rootView.findViewById(R.id.textName));
 //			textName.setText(mItem.name);
 //			
-//			textDescritption = ((TextView) rootView.findViewById(R.id.textDescription));
+//			textDescritption = ((TextView) rootView.findViewById(R.id.textTagId));
 //			textDescritption.setText(mItem.tagid);
 //			
 //			//textVisibility = ((TextView) rootView.findViewById(R.id.textVisibility));
@@ -207,126 +211,3 @@ import de.uniulm.bagception.bundlemessageprotocol.BundleMessage;
 //			ad.show();
 //	}
 //}
-//
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public class ItemDetailFragment extends Fragment implements android.support.v4.app.LoaderManager.LoaderCallbacks<Cursor>{
-
-	interface DisplayCallback extends DetailCallback {
-		void addItem();
-		void switchToForm(long itemId);
-	}
-	
-	// The unique identifier of the loader for entities
-	private static final int ENTITY_LOADER = 40;
-	
-	// The key for storing the two pane mode
-	private static final String KEY_ITEM_ID = "keyItemid";
-	
-	// The ID of the currently choosen item. -1 is none is choosen
-	private long mItemId = -1;
-	
-	// The GUI elements for the representation
-	private View rootView;
-	private TextView textName;
-	private TextView textTagID;
-	private Spinner spinner;
-	private TextView textVisibility;
-	private RadioButton radioButton;
-	private RadioButton radioButton2;
-	private SQLiteDatabase db;
-	private String id;
-	private Bundle tagid;
-	private ImageView itemPhoto;
-	
-	// The URI of the photo
-	private Uri mPhotoUri;
-	
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		
-		super.onCreate(savedInstanceState);
-		
-		if(getArguments() != null) {
-			mItemId = getArguments().getLong(KEY_ITEM_ID, -1);
-		}
-		setHasOptionsMenu(true);
-	}
-	
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		
-		super.onActivityCreated(savedInstanceState);
-		
-		if (mItemId != -1){
-			getLoaderManager().initLoader(ENTITY_LOADER, null, this);
-		}
-	}
-	
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-		rootView = inflater.inflate(R.layout.fragment_item_detail, container, false);
-		
-		textName = (TextView) rootView.findViewById(R.id.textName);
-		textTagID = (TextView) rootView.findViewById(R.id.textTagId);
-		itemPhoto = (ImageView) rootView.findViewById(R.id.itemPhoto);
-		
-		return rootView;
-	}
-	
-	@Override
-	public android.support.v4.content.Loader<Cursor> onCreateLoader(int arg0,
-			Bundle arg1) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void onLoadFinished(android.support.v4.content.Loader<Cursor> arg0,
-			Cursor arg1) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onLoaderReset(android.support.v4.content.Loader<Cursor> arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
-}

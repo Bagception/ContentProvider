@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< Original
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bagception_database"
     android:versionCode="1"
@@ -21,6 +23,7 @@
             android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -64,6 +67,39 @@
             android:name="com.example.bagception_database.gui.ShowFoundTags"
             android:label="@string/title_activity_show_found_tags" >
         </activity>
+        <activity
+            android:name="com.example.bagception_database.ItemOverviewActivity"
+            android:label="@string/title_activity_item_overview" >
+        </activity>
+        <activity
+            android:name="com.example.bagception_database.ItemsDetailActivity"
+            android:label="@string/title_activity_items_detail" >
+        </activity>
+        <activity
+            android:name="com.example.bagception_database.Item_Overview_Activity"
+            android:label="@string/title_activity_item__overview_" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
-</manifest>
+</manifest>=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity
+            android:name="com.example.bagception_database.ItemOverviewActivity"
+            android:label="@string/title_activity_item_overview" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>>>>>>>> Added
+
